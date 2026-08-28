@@ -1,0 +1,153 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Wind Turbine Optimization — Aili Alamdari</title>
+<meta name="description" content="A scratch-built wind turbine with an interchangeable hub, used to test blade count, pitch angle and blade size against electrical output.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">AA</span>
+      <span class="brand-name">Aili Alamdari <span>/ Portfolio</span></span>
+    </a>
+    <nav class="mainnav">
+      <a class="navlink" href="../index.html#top">Home</a>
+      <a class="navlink" href="../index.html#work">Work</a>
+      <a class="navlink" href="../index.html#experience">Experience</a>
+      <a class="navlink" href="../index.html#contact">Contact</a>
+      <a class="btn" href="../resume/Aili-Alamdari-Resume.pdf" download>Resume</a>
+    </nav>
+    <button class="navburger" aria-label="Open menu"><span class="bars"><i></i><i></i><i></i></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap pv-hero">
+    <a class="pv-back" href="../index.html#work">← Back to work</a>
+    <div class="pv-head">
+      <div>
+        <p class="eyebrow">Team research project · Cégep Gérald-Godin, 2024</p>
+        <h1>Wind Turbine Configuration &amp; Output</h1>
+      </div>
+      <div class="pv-meta">
+        <div><span>Variables tested</span><b>Blade count, pitch, size</b></div>
+        <div><span>Method</span><b>10 trials per configuration</b></div>
+        <div><span>Best config</span><b>4 blades · 10° · small</b></div>
+      </div>
+    </div>
+
+    <figure class="pv-figure reveal">
+      <img src="../images/turb_setup.jpg" alt="Test rig: fan, anemometer and turbine with generator, sketched setup diagram">
+    </figure>
+  </div>
+
+  <div class="wrap pv-body">
+    <div class="pv-label">The question</div>
+    <div>
+      <div class="pv-block reveal">
+        <h3>What blade configuration produces the most energy?</h3>
+        <p>Wind turbines convert the kinetic energy of moving air into electricity, and how well they do that comes down largely to blade geometry. With a team of four, we built a small-scale turbine entirely from scratch and used it to isolate the effect of three design variables on electrical output: <b>the number of blades</b>, <b>the pitch angle</b> (the blade's tilt relative to the wind), and <b>the blade size</b>.</p>
+        <p>The goal wasn't just to find one "best" turbine — it was to build a rig where we could swap any of the three variables independently and re-test, so the hub, blade mounts, and blade sizes were all designed to be interchangeable rather than fixed.</p>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>The rig</h3>
+        <p>A fan supplies a constant airstream (13 ± 1 m/s, checked with an anemometer) toward the turbine. A steel shaft runs through two ball bearings on a wood frame — blades mount on one end, and a disc of magnets on the other. As the blades spin the shaft, the magnets rotate past a fixed ring of coils, inducing a current. That current runs through an ammeter and a resistor in series, with a voltmeter in parallel, both feeding a PASCO interface so we could log the actual energy produced (in W·s) over 10-second intervals using Capstone software.</p>
+        <p>For each configuration, we ran <b>ten 10-second trials</b>, starting only once the turbine reached its maximum rotation speed, then averaged the results.</p>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Results</h3>
+
+        <div class="chart-block">
+          <h4>Energy output vs. number of blades (30° pitch, medium blades)</h4>
+          <div class="bars">
+            <div class="bar-col"><div class="bar" data-h="45"><span class="bar-val">0.236</span></div><div class="bar-label">1</div></div>
+            <div class="bar-col"><div class="bar" data-h="54"><span class="bar-val">0.278</span></div><div class="bar-label">2</div></div>
+            <div class="bar-col"><div class="bar" data-h="81"><span class="bar-val">0.414</span></div><div class="bar-label">3</div></div>
+            <div class="bar-col"><div class="bar win" data-h="100"><span class="bar-val">0.512</span></div><div class="bar-label">4 ★</div></div>
+            <div class="bar-col"><div class="bar" data-h="69"><span class="bar-val">0.352</span></div><div class="bar-label">6</div></div>
+          </div>
+        </div>
+
+        <div class="chart-block">
+          <h4>Energy output vs. pitch angle (3 blades, medium size)</h4>
+          <div class="bars">
+            <div class="bar-col"><div class="bar win" data-h="100"><span class="bar-val">1.045</span></div><div class="bar-label">10° ★</div></div>
+            <div class="bar-col"><div class="bar" data-h="69"><span class="bar-val">0.722</span></div><div class="bar-label">20°</div></div>
+            <div class="bar-col"><div class="bar" data-h="40"><span class="bar-val">0.413</span></div><div class="bar-label">30°</div></div>
+            <div class="bar-col"><div class="bar" data-h="20"><span class="bar-val">0.204</span></div><div class="bar-label">45°</div></div>
+            <div class="bar-col"><div class="bar" data-h="10"><span class="bar-val">0.105</span></div><div class="bar-label">60°</div></div>
+            <div class="bar-col"><div class="bar" data-h="7"><span class="bar-val">0.077</span></div><div class="bar-label">75°</div></div>
+            <div class="bar-col"><div class="bar" data-h="2"><span class="bar-val">0.020</span></div><div class="bar-label">90°</div></div>
+          </div>
+        </div>
+
+        <div class="chart-block">
+          <h4>Energy output vs. blade size (3 blades, 30° pitch)</h4>
+          <div class="bars">
+            <div class="bar-col"><div class="bar win" data-h="100"><span class="bar-val">0.834</span></div><div class="bar-label">Small ★</div></div>
+            <div class="bar-col"><div class="bar" data-h="50"><span class="bar-val">0.413</span></div><div class="bar-label">Medium</div></div>
+            <div class="bar-col"><div class="bar" data-h="15"><span class="bar-val">0.128</span></div><div class="bar-label">Large</div></div>
+          </div>
+        </div>
+        <p style="font-family:var(--mono); font-size:11px; color:var(--muted); margin-top:14px;">Average electrical energy per 10s trial, in W·s. ★ marks the best-performing value in each test, confirmed with a two-mean hypothesis test at the 1% threshold.</p>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Reading the results against our hypotheses</h3>
+        <p>Going in, theory predicted 3 blades would be optimal for balancing energy capture against aerodynamic loss. In practice, 4 blades won: 1 blade rotated unevenly, 2 suffered from gyroscopic precession, and 6 blades started clipping each other's turbulent wake — 4 turned out to be the point where blades capture enough wind without crowding each other.</p>
+        <p>The pitch angle result matched our hypothesis directly: the smallest tested angle, 10°, produced the most energy, and output fell steadily as pitch increased toward 90°. This tracks the aerodynamic theory — decreasing pitch increases the angle of attack, which increases lift, up to the point of stall.</p>
+        <p>Blade size was the biggest surprise: we expected medium blades to win, since large ones seemed too heavy for our fan's output and small ones too small to catch enough wind. Small blades won convincingly instead — most likely because all three tested sizes were larger than the fan's own radius, so the medium and large blades carried "dead weight" tips that never actually caught airflow, dragging down their effective performance.</p>
+        <div class="conclusion-card">
+          <h4>Conclusion</h4>
+          <p>The optimal configuration we tested was <b>4 small blades at a 10° pitch angle</b>. That said, we were careful to flag the gap between a lab result and a deployable design — a real turbine also has to account for manufacturing cost, structural balance, and durability, which this experiment didn't measure.</p>
+        </div>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Sources of error</h3>
+        <ul>
+          <li>Fan-generated wind wasn't perfectly constant — it varied roughly 12–14 m/s within a single trial.</li>
+          <li>Testing happened in a shared, non-isolated space; other teams' fans, doors opening and closing, and people standing behind the rig measurably affected results — we saw rotation speed drop by close to 30% when someone stood behind the setup.</li>
+          <li>Cardboard blades couldn't be manufactured perfectly identically, introducing small mass imbalances.</li>
+          <li>Pitch angle was measured by taping a ruler to a protractor, since no instrument small enough was available — this limited angular precision.</li>
+        </ul>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Gallery</h3>
+        <div class="gallery one">
+          <figure>
+            <img src="../images/turb_exploded.jpg" alt="Exploded diagram of the turbine shaft, hub, bearings and generator">
+            <figcaption>Shaft, hub &amp; generator assembly</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="pv-nextprev">
+      <a class="np-link" href="sliding-door.html"><span>Previous</span><b>← Modul'accès</b></a>
+      <a class="np-link right" href="../index.html#work"><span>Back to</span><b>All projects →</b></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-bottom" style="border:none;padding-top:0;">
+    <span>Aili Alamdari — Mechanical Engineering, Polytechnique Montréal</span>
+    <a href="mailto:aili.alamdari@gmail.com" style="color:#DCE3EC;">aili.alamdari@gmail.com</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><button class="lightbox-close" aria-label="Close">×</button><img src="" alt=""></div>
+<script src="../js/main.js"></script>
+</body>
+</html>
