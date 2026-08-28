@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Modul'accès — Aili Alamdari</title>
+<meta name="description" content="A LiDAR-guided automated sliding door that opens fully for wheelchairs and equipment or partially for pedestrians, cutting queues and heat loss.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">AA</span>
+      <span class="brand-name">Aili Alamdari <span>/ Portfolio</span></span>
+    </a>
+    <nav class="mainnav">
+      <a class="navlink" href="../index.html#top">Home</a>
+      <a class="navlink" href="../index.html#work">Work</a>
+      <a class="navlink" href="../index.html#experience">Experience</a>
+      <a class="navlink" href="../index.html#contact">Contact</a>
+      <a class="btn" href="../resume/Aili-Alamdari-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+    </nav>
+    <button class="navburger" aria-label="Open menu"><span class="bars"><i></i><i></i><i></i></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap pv-hero">
+    <a class="pv-back" href="../index.html#work">← Back to work</a>
+    <div class="pv-head">
+      <div>
+        <p class="eyebrow">Team project · 2025</p>
+        <h1>Modul'accès</h1>
+      </div>
+      <div class="pv-meta">
+        <div><span>Sensing</span><b>LiDAR</b></div>
+        <div><span>Controls</span><b>Arduino</b></div>
+        <div><span>Modeled gain</span><b>+27% flow</b></div>
+      </div>
+    </div>
+
+    <figure class="pv-figure reveal">
+      <img src="../images/door_hero.jpg" alt="Concept illustration of the automated sliding door: a small door opens for a pedestrian, both doors open for large objects">
+      <figcaption>Concept illustration — how the two-panel opening logic works in practice.</figcaption>
+    </figure>
+  </div>
+
+  <div class="wrap pv-body">
+    <div class="pv-label">The problem</div>
+    <div>
+      <div class="pv-block reveal">
+        <h3>Three problems, one entrance</h3>
+        <p>The brief started with a single entryway that was failing three different groups at once, so the fix had to solve all three together, not trade one off against another:</p>
+        <ul class="problem-list">
+          <li><i>01</i> Poor accessibility for people with reduced mobility — wheelchairs, stretchers, and equipment don't fit through a standard-width opening.</li>
+          <li><i>02</i> Poor thermal regulation — a door held open (or opened fully for every visitor) lets conditioned or heated air escape.</li>
+          <li><i>03</i> Queue formation at peak hours — a single fixed-width door becomes a bottleneck when traffic spikes.</li>
+        </ul>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>How it works</h3>
+        <p>The system uses a LiDAR sensor to measure the size of whoever — or whatever — is approaching the entrance, then chooses one of two door configurations automatically:</p>
+        <ul>
+          <li><b>Full opening</b> — triggered when the sensor reads something wider than a standard pedestrian: a wheelchair, a stretcher, or someone carrying equipment.</li>
+          <li><b>Partial opening</b> — triggered for a regular pedestrian, opening only the smaller of the two door panels. This keeps the airflow — and the heat loss — to a minimum during winter months, while still moving people through quickly.</li>
+        </ul>
+        <p>Mechanically, the two panels ride on a dual guide-rail system — a steel upper rail carrying eight nylon-and-aluminum wheels, with separate aluminum support rails for the small and large door panels (see the guidance-system drawing below). We designed the whole rail and carriage assembly in CAD before building it.</p>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Built and tested end-to-end</h3>
+        <p>This wasn't just a simulation — we built a physical prototype ourselves, wrote the full Arduino control code from scratch, and demonstrated it live in front of a jury. Getting from a rail drawing to a door that reliably opens the correct amount, for the correct object, on the first try meant a lot of iteration on the sensor thresholds and the drive mechanism.</p>
+        <div class="callout">Modeled result: a 27% improvement in people flow through the entrance — all while keeping airflow to a minimum, which is exactly what a Canadian winter calls for.</div>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Gallery</h3>
+        <div class="gallery">
+          <figure>
+            <img src="../images/door_cad_front.jpg" alt="CAD front view of the sliding door assembly with both panels open">
+            <figcaption>CAD assembly — front view, both panels open</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/door_cad_closed.jpg" alt="CAD render of the sliding door in the closed, partial-opening configuration">
+            <figcaption>Partial-opening configuration</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/door_dwg.jpg" alt="Technical drawing of the guide rail and wheel system, dwg 002">
+            <figcaption>Guidance system — dwg 002, scale 1:5</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/door_proto.jpg" alt="Photo of the physical prototype under construction, showing rails, pulleys and the Arduino control board">
+            <figcaption>Physical prototype — drive &amp; control electronics</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/door_full_proto.jpg" alt="Full-scale wood prototype of the sliding door assembly with tracks and motor mounts">
+            <figcaption>Full-scale prototype</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="pv-nextprev">
+      <a class="np-link" href="robot-dog.html"><span>Previous</span><b>← Chien-Robot</b></a>
+      <a class="np-link right" href="wind-turbine.html"><span>Next project</span><b>Wind Turbine →</b></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-bottom" style="border:none;padding-top:0;">
+    <span>Aili Alamdari — Mechanical Engineering, Polytechnique Montréal</span>
+    <a href="mailto:aili.alamdari@gmail.com" style="color:#DCE3EC;">aili.alamdari@gmail.com</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><button class="lightbox-close" aria-label="Close">×</button><img src="" alt=""></div>
+<script src="../js/main.js"></script>
+</body>
+</html>
