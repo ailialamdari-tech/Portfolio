@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chien-Robot — Aili Alamdari</title>
+<meta name="description" content="An autonomous robotic dog designed for a special-education school, built as a safe, stimulating companion for autistic children.">
+<link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a href="../index.html" class="brand">
+      <span class="brand-mark">AA</span>
+      <span class="brand-name">Aili Alamdari <span>/ Portfolio</span></span>
+    </a>
+    <nav class="mainnav">
+      <a class="navlink" href="../index.html#top">Home</a>
+      <a class="navlink" href="../index.html#work">Work</a>
+      <a class="navlink" href="../index.html#experience">Experience</a>
+      <a class="navlink" href="../index.html#contact">Contact</a>
+      <a class="btn" href="../resume/Aili-Alamdari-Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+    </nav>
+    <button class="navburger" aria-label="Open menu"><span class="bars"><i></i><i></i><i></i></span></button>
+  </div>
+</header>
+
+<main>
+  <div class="wrap pv-hero">
+    <a class="pv-back" href="../index.html#work">← Back to work</a>
+    <div class="pv-head">
+      <div>
+        <p class="eyebrow">Team project · Dwg no. 54-04 / 54-05</p>
+        <h1>Chien-Robot</h1>
+      </div>
+      <div class="pv-meta">
+        <div><span>Mandate</span><b>Special-education school</b></div>
+        <div><span>My focus</span><b>CAD, mechanisms, controls</b></div>
+        <div><span>Tools</span><b>SolidWorks, 3D printing, Arduino</b></div>
+      </div>
+    </div>
+
+    <figure class="pv-figure reveal">
+      <img src="../images/dog_hero.jpg" alt="Assembled robotic dog prototype on a rug, with light-up collar and mouth mechanism visible">
+    </figure>
+  </div>
+
+  <div class="wrap pv-body">
+    <div class="pv-label">The brief</div>
+    <div>
+      <div class="pv-block reveal">
+        <h3>A toy that had to be safe and stimulating</h3>
+        <p>We took on this project as a mandate from a school for autistic children: design a toy that would be safe for a child to interact with, engaging enough to hold their attention, and robust enough to survive daily use in a classroom. Off-the-shelf robotic toys either felt too fragile, too electronic, or too hard to fix once something broke — so we designed and built one ourselves, from a blank CAD file to a fully functional prototype.</p>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>What we built</h3>
+        <p>The dog is fully autonomous, 3D-printed, and designed from scratch in CAD — every body panel, joint, and internal bracket. It's built around a few deliberately simple, readable behaviors rather than a long feature list, since predictability matters more than novelty for the kids using it:</p>
+        <ul>
+          <li>A collar that lights up, giving a clear visual cue when the dog is active.</li>
+          <li>A tail that wags and moves independently, driven by its own small mechanism.</li>
+          <li>A mouth mechanism that can pick up an object, carry it, and release it at a specific spot — a simple fetch-and-drop behavior.</li>
+          <li>Full mobility: forward, reverse, and in-place rotation, so it can navigate a small course on its own.</li>
+          <li>Power from just two AA batteries, keeping it lightweight and cheap to keep running.</li>
+        </ul>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Designed to be fixed, not replaced</h3>
+        <p>Because this was headed for a classroom, not a lab bench, durability and repairability were treated as design requirements from the start. Every part was chosen and shaped so it could be reprinted or swapped out with basic tools — no proprietary fasteners, no glued-shut assemblies. If a leg cracks or a gear strips, a teacher can replace that one part instead of the whole dog.</p>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Controls</h3>
+        <p>I programmed the Arduino-based control system that ties all of this together: autonomous navigation through a test course, the forward/reverse/rotation logic, the fetch-and-drop sequence for the mouth mechanism, tail movement, and the synchronized LED signals on the collar — all while meeting the safety requirements set for the project (no pinch points within reach, controlled speed, predictable behavior with no erratic movement).</p>
+      </div>
+
+      <div class="pv-block reveal">
+        <h3>Gallery</h3>
+        <div class="gallery">
+          <figure>
+            <img src="../images/dog_iso.jpg" alt="Isometric assembly drawing of the robotic dog showing all mechanical components">
+            <figcaption>Isometric assembly — dwg 54-04, scale 1:4</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/dog_front.jpg" alt="Front and side view technical drawing of the robotic dog with dimensions">
+            <figcaption>Front / side views — dwg 54-05, scale 1:3</figcaption>
+          </figure>
+          <figure>
+            <img src="../images/dog_hero.jpg" alt="Robotic dog prototype photographed in a home setting">
+            <figcaption>Finished prototype</figcaption>
+          </figure>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="wrap">
+    <div class="pv-nextprev">
+      <a class="np-link" href="../index.html#work"><span>Back to</span><b>All projects</b></a>
+      <a class="np-link right" href="sliding-door.html"><span>Next project</span><b>Modul'accès →</b></a>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap footer-bottom" style="border:none;padding-top:0;">
+    <span>Aili Alamdari — Mechanical Engineering, Polytechnique Montréal</span>
+    <a href="mailto:aili.alamdari@gmail.com" style="color:#DCE3EC;">aili.alamdari@gmail.com</a>
+  </div>
+</footer>
+
+<div class="lightbox" id="lightbox"><button class="lightbox-close" aria-label="Close">×</button><img src="" alt=""></div>
+<script src="../js/main.js"></script>
+</body>
+</html>
