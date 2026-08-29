@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.style.display = isOpen ? 'flex' : '';
       if (isOpen) {
         nav.style.position = 'absolute';
-        nav.style.top = '68px';
+        nav.style.top = '72px';
         nav.style.left = '0';
         nav.style.right = '0';
         nav.style.flexDirection = 'column';
@@ -28,17 +28,18 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   /* Experience accordion */
-  document.querySelectorAll('.parts-row[data-toggle]').forEach(row => {
+  document.querySelectorAll('.exp-row[data-toggle]').forEach(row => {
     row.addEventListener('click', () => {
+      const card = row.closest('.exp-card');
       const detail = row.nextElementSibling;
-      const isOpen = row.classList.contains('open');
-      document.querySelectorAll('.parts-row.open').forEach(r => {
-        r.classList.remove('open');
-        r.nextElementSibling.style.maxHeight = null;
+      const isOpen = card.classList.contains('open');
+      document.querySelectorAll('.exp-card.open').forEach(c => {
+        c.classList.remove('open');
+        c.querySelector('.exp-detail').style.maxHeight = null;
       });
       if (!isOpen) {
-        row.classList.add('open');
-        detail.style.maxHeight = detail.scrollHeight + 40 + 'px';
+        card.classList.add('open');
+        detail.style.maxHeight = detail.scrollHeight + 20 + 'px';
       }
     });
   });
